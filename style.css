@@ -139,7 +139,9 @@ input:invalid:not(:placeholder-shown):not(:focus) {
 }
 
 label:has(+ input:focus),
-label:has(+ input:not(:placeholder-shown)) {
+label:has(+ input:not(:placeholder-shown)),
+.container:has(+ input:focus) > label,
+.container:has(+ input:not(:placeholder-shown)) > label {
   color: blue;
   translate: 0 -2rem;
   font-size: 0.5rem;
@@ -164,7 +166,8 @@ a {
   font-weight: bold;
 }
 
-label[for=password] {
+label[for=password],
+label[for=confirm] {
   position: static;
 }
 
@@ -172,11 +175,15 @@ label[for=password] {
   display: flex;
   position: absolute;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
+  height: 100%;
   pointer-events: none;
 }
 
 span {
   pointer-events: all !important;
   cursor: pointer;
+  padding-bottom: 0.9rem;
+  user-select: none;
 }

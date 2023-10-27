@@ -8,7 +8,14 @@ function onChange() {
     }
 }
 
-function showPassword() {
-    const password = this
-    console.log(this)
+function showPassword(password, icon) {
+    if (icon.textContent == 'visibility') {
+        password.setAttribute('type', 'text')
+        icon.textContent = 'visibility_off'
+    } else {
+        password.setAttribute('type', 'password')
+        icon.textContent = 'visibility'
+    }
+
+    password.focus()
 }

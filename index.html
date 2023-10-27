@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0" />
     <script src="script.js" defer></script>
 </head>
 
@@ -50,13 +52,20 @@
                 <div class="label-input">
                     <div class="container">
                         <label for="password">password</label>
-                        <span class="material-symbols-outlined" onclick="showPassword()">visibility</span>
+                        <span class="material-symbols-outlined"
+                            onmousedown="showPassword(document.querySelector('#password'), document.querySelector('#password-icon'))"
+                            id="password-icon">visibility</span>
                     </div>
-                        <input type="password" name="password" id="password" required autocomplete="on" placeholder=""
-                            minlength="8" maxlength="16" onchange="onChange()">
+                    <input type="password" name="password" id="password" required autocomplete="on" placeholder=""
+                        minlength="8" maxlength="16" onchange="onChange()">
                 </div>
                 <div class="label-input">
-                    <label for="confirm">confirm password</label>
+                    <div class="container">
+                        <label for="confirm">confirm password</label>
+                        <span class="material-symbols-outlined"
+                            onclick="showPassword(document.querySelector('#confirm'), document.querySelector('#confirm-icon'))"
+                            id="confirm-icon">visibility</span>
+                    </div>
                     <input type="password" name="confirm" id="confirm" required autocomplete="on" placeholder=""
                         minlength='8' maxlength='16' onchange="onChange()">
                 </div>
